@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030613" />
+  <title>About // Helios Command</title>
+  <style>
+    :root { color-scheme: dark; --ink:#e8f7ff; --muted:#8aa4b7; --cyan:#68e4ff; --line:rgba(147,220,255,.25); }
+    * { box-sizing: border-box; } html,body { margin:0; min-height:100%; } body { background:#030613; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; overflow-x:hidden; }
+    #space { position:fixed; inset:0; width:100%; height:100%; z-index:-3; } .wash { position:fixed; inset:0; pointer-events:none; background:radial-gradient(ellipse at 80% 20%,rgba(48,103,220,.17),transparent 31%),linear-gradient(90deg,rgba(2,7,20,.27),transparent); z-index:-2; }
+    .shell { min-height:100svh; padding:clamp(22px,4vw,60px); display:grid; grid-template-rows:auto 1fr auto; gap:36px; }
+    header,footer,nav,.eyebrow,.meta { letter-spacing:.14em; text-transform:uppercase; } header { display:flex; align-items:center; gap:28px; font-size:11px; font-weight:600; color:var(--muted); } .brand { display:flex; align-items:center; gap:12px; color:var(--ink); white-space:nowrap; }.brand__mark { width:27px; height:27px; position:relative; border:1px solid var(--cyan); transform:rotate(45deg); box-shadow:0 0 18px rgba(104,228,255,.32),inset 0 0 12px rgba(104,228,255,.18); }.brand__mark:after { content:""; position:absolute; inset:7px; background:var(--cyan); box-shadow:0 0 14px var(--cyan); } nav { display:flex; gap:clamp(12px,2vw,28px); margin-left:auto; font-size:10px; } nav a { color:var(--muted); text-decoration:none; transition:color .2s ease; } nav a:hover,nav a[aria-current="page"] { color:var(--cyan); }
+    main { align-self:center; display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,.55fr); gap:clamp(42px,10vw,160px); max-width:1150px; width:100%; margin:0 auto; } .eyebrow { margin:0 0 17px; color:var(--cyan); font-size:11px; font-weight:700; } h1 { margin:0; font-family:"Arial Narrow",Impact,sans-serif; font-size:clamp(60px,10vw,142px); font-weight:500; line-height:.82; letter-spacing:-.065em; text-transform:uppercase; } h1 span { display:block; color:transparent; -webkit-text-stroke:1px rgba(210,244,255,.8); } .intro { max-width:580px; margin:32px 0 0; color:#c1d4df; font-size:clamp(15px,1.5vw,18px); line-height:1.72; }
+    .panel { align-self:end; padding:26px; border:1px solid var(--line); background:linear-gradient(145deg,rgba(12,31,62,.68),rgba(4,11,28,.32)); box-shadow:inset 0 0 35px rgba(48,129,221,.08),0 0 50px rgba(12,61,130,.09); backdrop-filter:blur(8px); } .panel__title { display:flex; justify-content:space-between; margin:0 0 26px; color:var(--cyan); font:600 10px "Courier New",monospace; letter-spacing:.14em; text-transform:uppercase; } .panel__title i { width:7px;height:7px;border-radius:50%;background:#80ffd4;box-shadow:0 0 10px #80ffd4; } .stat { padding:13px 0; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:16px; color:var(--muted); font:10px "Courier New",monospace; letter-spacing:.08em; text-transform:uppercase; }.stat strong { color:#e2f8ff; font-weight:500; text-align:right; }
+    .cta { display:inline-flex; align-items:center; gap:10px; margin-top:31px; padding:14px 18px; border:1px solid rgba(124,229,255,.8); background:rgba(24,107,161,.18); color:#eafaff; text-decoration:none; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; box-shadow:inset 0 0 19px rgba(54,167,255,.2),0 0 19px rgba(42,166,255,.1); transition:transform .2s ease,background .2s ease; }.cta:hover { transform:translateY(-2px); background:rgba(56,172,224,.29); }
+    footer { display:flex; justify-content:space-between; color:var(--muted); font:10px "Courier New",monospace; line-height:1.65; } footer b { color:var(--cyan); font-weight:500; }
+    @media (max-width:720px) { .shell{padding:23px;gap:20px;} header{gap:16px;} nav{gap:14px;} .brand span:last-child{display:none;} main{grid-template-columns:1fr;gap:35px;margin:auto 0;} .panel{max-width:390px;} footer>:last-child{display:none;} }
+  </style>
+</head>
+<body>
+  <canvas id="space" aria-hidden="true"></canvas><div class="wash"></div>
+  <div class="shell">
+    <header>
+      <div class="brand"><span class="brand__mark"></span><span>Helios Command</span></div>
+      <nav aria-label="Primary navigation"><a href="sci-fi-space.html">Home</a><a href="about.html" aria-current="page">About</a><a href="contact.html">Contact</a></nav>
+    </header>
+    <main>
+      <section>
+        <p class="eyebrow">Est. 2147 / Carina Drift</p>
+        <h1>We map<span>tomorrow.</span></h1>
+        <p class="intro">Helios Command is a civilian deep-space observatory built for one purpose: to make the distant feel close enough to explore. We turn raw signals from the dark into routes, habitats, and new possibilities.</p>
+        <a class="cta" href="contact.html">Contact the command <span>→</span></a>
+      </section>
+      <aside class="panel" aria-label="Mission profile">
+        <p class="panel__title">Mission profile <i></i></p>
+        <div class="stat"><span>Primary field</span><strong>Exoplanetary Survey</strong></div>
+        <div class="stat"><span>Observation range</span><strong>14.7 light years</strong></div>
+        <div class="stat"><span>Active array</span><strong>Kepler / 07</strong></div>
+        <div class="stat"><span>Next window</span><strong>04:13:08 UTC</strong></div>
+      </aside>
+    </main>
+    <footer><div>Sector C-19 / Secure public relay</div><div>Current status / <b>Listening</b></div></footer>
+  </div>
+  <script>
+    (() => { const c=document.querySelector('#space'),x=c.getContext('2d'); let w,h,s=[]; function size(){w=innerWidth;h=innerHeight;c.width=w*(devicePixelRatio||1);c.height=h*(devicePixelRatio||1);x.setTransform(devicePixelRatio||1,0,0,devicePixelRatio||1,0,0);s=Array.from({length:Math.max(180,w*h/3300)},()=>[Math.random()*w,Math.random()*h,Math.random()*1.4+.15,Math.random()*.7+.2]);draw()} function draw(){x.fillStyle='#030613';x.fillRect(0,0,w,h);const g=x.createRadialGradient(w*.72,h*.18,0,w*.72,h*.18,w*.55);g.addColorStop(0,'rgba(62,120,227,.17)');g.addColorStop(1,'rgba(2,5,17,0)');x.fillStyle=g;x.fillRect(0,0,w,h);s.forEach(a=>{x.fillStyle=`rgba(220,244,255,${a[3]})`;x.beginPath();x.arc(a[0],a[1],a[2],0,7);x.fill()});} addEventListener('resize',size);size(); })();
+  </script>
+</body>
+</html>

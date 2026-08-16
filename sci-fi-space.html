@@ -60,7 +60,7 @@
       gap: 28px;
     }
 
-    header, footer, .status, .hero__kicker, .controls, .readout { letter-spacing: .14em; text-transform: uppercase; }
+    header, footer, .status, .hero__kicker, .controls, .readout, nav { letter-spacing: .14em; text-transform: uppercase; }
     header {
       display: flex;
       align-items: center;
@@ -71,6 +71,9 @@
       color: var(--muted);
     }
     .brand { display: flex; align-items: center; gap: 12px; color: var(--ink); }
+    nav { display: flex; align-items: center; gap: clamp(12px, 2vw, 28px); font-size: 10px; }
+    nav a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+    nav a:hover, nav a[aria-current="page"] { color: var(--cyan); }
     .brand__mark {
       width: 27px; height: 27px; position: relative; border: 1px solid var(--cyan); transform: rotate(45deg);
       box-shadow: 0 0 18px rgba(104, 228, 255, .32), inset 0 0 12px rgba(104, 228, 255, .18);
@@ -142,6 +145,7 @@
     @media (max-width: 730px) {
       .shell { padding: 23px; gap: 10px; }
       header > :last-child { display: none; }
+      nav { margin-left: auto; }
       h1 { font-size: clamp(62px, 19vw, 108px); }
       .hero__copy { max-width: 330px; margin: 25px 0; }
       .hud { display: none; }
@@ -155,7 +159,7 @@
   <div class="shell">
     <header>
       <div class="brand"><span class="brand__mark"></span><span>Helios Command</span></div>
-      <div>Archive / 2164.04.18</div>
+      <nav aria-label="Primary navigation"><a href="sci-fi-space.html" aria-current="page">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
       <div class="status"><i></i> Deep space link stable</div>
     </header>
 
